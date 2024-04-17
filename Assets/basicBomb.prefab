@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3974424438263112717}
   - component: {fileID: 350069072867824403}
   - component: {fileID: 568569776226174543}
-  - component: {fileID: 3202416739612454936}
+  - component: {fileID: 5756290073243400648}
   m_Layer: 0
   m_Name: basicBomb
   m_TagString: Untagged
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3202416739612454936
+--- !u!114 &5756290073243400648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,13 +140,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 415326818568937902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbda93efcab93fc4abba92a06bd06e5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d8d1a56953326b43aeb7718a54631a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfImpact: 3
-  force: 100
+  Intercept: 0
+  Layers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  Paint: 0
+  Shape: {fileID: 2800000, guid: d01876177139274408b6fb053b6622a4, type: 3}
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Size: {x: 1.5, y: 1.5}
+  Angle: 0
   layerToHit:
     serializedVersion: 2
     m_Bits: 8
-  ExplosionEffect: {fileID: 100004, guid: b46890100828db6429ff69c322b45893, type: 3}
-  price: 5
+  Explosion: {fileID: 100004, guid: b46890100828db6429ff69c322b45893, type: 3}
+  price: 2
+  Camera: {fileID: 0}
+  ExplosionEffect: {fileID: 100000, guid: f031021cf17f3204d813b8a70e253cf8, type: 3}
