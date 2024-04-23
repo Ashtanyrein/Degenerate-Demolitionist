@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class StructureManager : MonoBehaviour
 {
-    public float height = 0.0f;
+    public float height = -10.0f;
     public bool shouldExplode = false;
-    public List<GameObject> objects = new List<GameObject>();
-    private void Start()
+    public bool won;
+    public GameObject current;
+    
+    void Start()
     {
-        //need to fill objects with all structure components and set height
+        won = false;
     }
     void Update()
     {
         //update object positions and height
+        for (int i = 0; i < this.gameObject.transform.childCount; i++)
+        {
+            current = this.gameObject.transform.GetChild(i).gameObject;
+            if (current.transform.position.y >= height)
+            {
+                height = current.transform.position.y;
+            }
+        }
+
+        if (height <= -1.0f)//arbitrary
+        {
+            won = true;
+        }
+
+        height = -10.0f;
     }
 }
 
