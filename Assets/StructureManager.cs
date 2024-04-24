@@ -25,9 +25,9 @@ public class StructureManager : MonoBehaviour
             }
         }
 
-        if (height <= -1.0f)//arbitrary
+        if (height <= -1.0f)//-1.0 is arbitrary
         {
-            won = true;
+            won = true;//can be used to implement win state
         }
 
         height = -10.0f;
