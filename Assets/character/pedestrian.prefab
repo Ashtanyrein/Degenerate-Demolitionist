@@ -17422,7 +17422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRotation: 0
   rb: {fileID: 9135760639654470107}
-  force: 50
+  force: 2250
 --- !u!114 &7495566146286353846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22012,7 +22012,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6729035571326572905}
   - component: {fileID: 2690879375761470440}
-  - component: {fileID: 4806448701662613134}
   - component: {fileID: 9157301369753291181}
   - component: {fileID: 5820033115309970784}
   - component: {fileID: 497445380859816992}
@@ -22095,18 +22094,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4806448701662613134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7556492903259360000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03171c389676fa643a64451a2c7bdd19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &9157301369753291181
 Rigidbody2D:
   serializedVersion: 4
@@ -22188,7 +22175,7 @@ MonoBehaviour:
   onImpact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4806448701662613134}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HingeJointToggle, Assembly-CSharp
         m_MethodName: ToggleJoint
         m_Mode: 1

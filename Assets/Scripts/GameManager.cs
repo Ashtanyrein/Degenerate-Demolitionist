@@ -11,10 +11,6 @@ public class GameManager : MonoBehaviour
 
     private TMPro.TextMeshProUGUI budgetCounterNumber;
 
-    public void TriggerExplosives()
-    {
-        Structure.shouldExplode = !Structure.shouldExplode;
-    }
     void Start()
     {
         budgetCounterNumber = BudgetCounter.GetComponent<TMPro.TextMeshProUGUI>();
@@ -24,5 +20,19 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         budgetCounterNumber.text = budget.ToString();    
+    }
+
+    public void TriggerExplosives()
+    {
+        Structure.shouldExplode = !Structure.shouldExplode;
+        StartCoroutine(ResetExplosion());
+    }
+
+    private IEnumerator ResetExplosion()
+    {
+        // Wait for 0.5 seconds
+        yield return new WaitForSeconds(0.5f);
+        // Reset shouldExplode to false after 0.5 seconds
+        Structure.shouldExplode = false;
     }
 }
