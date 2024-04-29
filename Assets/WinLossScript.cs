@@ -15,8 +15,8 @@ public class WinLossScript : MonoBehaviour
     void Start()
     {
         WinTextObject = GameObject.Find("WinText");
-        //WinText = WinTextObject.GetComponent<TextMesh>();THESE LINES DONT WORK. IDK WHY. WILL FIX.
-        //WinRenderer = WinText.GetComponent<MeshRenderer>();
+        WinText = WinTextObject.GetComponent<TextMesh>();
+        WinRenderer = WinText.GetComponent<MeshRenderer>();
         WinRenderer.enabled = false;
     }
 

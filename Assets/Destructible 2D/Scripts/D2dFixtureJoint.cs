@@ -49,7 +49,10 @@ namespace Destructible2D
 				return true;
 			}
 		}
-
+		public void breakJoint()
+		{
+			Destroy(joint);
+		}
 		/// <summary>This method can be used to immediately update this component.</summary>
 		[ContextMenu("Update Fixtures")]
 		public void UpdateFixtures()
