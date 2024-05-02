@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public void TriggerExplosives()
     {
         Structure.shouldExplode = !Structure.shouldExplode;
-        StartCoroutine(ResetExplosion());
+        //StartCoroutine(ResetExplosion()); shouldn't run every time, but the function should exist for multiple scenes
     }
 
     private IEnumerator ResetExplosion()
