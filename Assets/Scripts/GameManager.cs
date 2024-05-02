@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int budget = 20;
     public GameObject BudgetCounter;
     public StructureManager Structure;
+    public bool itemPurchased = false;
 
     private TMPro.TextMeshProUGUI budgetCounterNumber;
 
@@ -15,6 +16,17 @@ public class GameManager : MonoBehaviour
     {
         Structure.shouldExplode = !Structure.shouldExplode;
     }
+
+    public bool IsItemPurchased()
+    {
+        return itemPurchased;
+    }
+
+    public void SetItemPurchased(bool purchased)
+    {
+        itemPurchased = purchased;
+    }
+    
     void Start()
     {
         budgetCounterNumber = BudgetCounter.GetComponent<TMPro.TextMeshProUGUI>();
