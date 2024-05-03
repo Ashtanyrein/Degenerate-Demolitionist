@@ -24,10 +24,10 @@ public class WinLossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Structure.shouldExplode)
+        /*if (Structure.shouldExplode)
         {
             DetermineWinLoss();
-        }
+        }*/
         /*if (winState == 1)
         {
             WinRenderer.enabled = true;

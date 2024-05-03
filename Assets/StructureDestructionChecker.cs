@@ -6,6 +6,7 @@ public class StructureDetector : MonoBehaviour
     public GameObject WinTextObject;
     public GameObject PedestrianLossTextObject;
     public GameObject FailureLossTextObject;
+    public StructureManager Structure;
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
 
@@ -19,6 +20,11 @@ public class StructureDetector : MonoBehaviour
 
     private void Update()
     {
+        if (Structure.shouldExplode)
+        {
+            StartCoroutine(DetermineWinLoss());
+        }
+        /*
         // Check if there are any structures inside the detection area
         if (IsStructureInside())
         {
@@ -37,7 +43,7 @@ public class StructureDetector : MonoBehaviour
 
             // Perform any desired actions when the user wins
             // For example, you can show a victory screen, update score, etc.
-        }
+        }*/
     }
 
     private bool IsStructureInside()
