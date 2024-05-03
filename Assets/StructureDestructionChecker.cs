@@ -7,7 +7,6 @@ public class StructureDetector : MonoBehaviour
     public GameObject PedestrianLossTextObject;
     public GameObject FailureLossTextObject;
     public StructureManager Structure;
-    public int damage;
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
 
@@ -87,12 +86,18 @@ public class StructureDetector : MonoBehaviour
 
         else
         {
+            if (false)//place condition for excessive pedestrian damage here
+            {
+                PedestrianLossTextObject.SetActive(true);
+            }
             // No structures inside the area
             // The user has won the game
-            Debug.Log("Congratulations! You have destroyed all structures.");
 
             // Set the WinTextObject to active
-            WinTextObject.SetActive(true);
+            else
+            {
+                WinTextObject.SetActive(true);
+            }
 
             // Perform any desired actions when the user wins
             // For example, you can show a victory screen, update score, etc.
