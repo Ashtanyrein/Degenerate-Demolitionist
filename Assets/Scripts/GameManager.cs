@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int budget = 20;
     public GameObject BudgetCounter;
     public StructureManager Structure;
+    public bool itemPurchased = false;
 
     private TMPro.TextMeshProUGUI budgetCounterNumber;
 
@@ -19,13 +20,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        budgetCounterNumber.text = budget.ToString();    
+        budgetCounterNumber.text = budget.ToString();
     }
 
     public void TriggerExplosives()
     {
         Structure.shouldExplode = !Structure.shouldExplode;
-        StartCoroutine(ResetExplosion());
+        //StartCoroutine(ResetExplosion()); shouldn't run every time, but the function should exist for multiple scenes
     }
 
     private IEnumerator ResetExplosion()
@@ -34,5 +35,15 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         // Reset shouldExplode to false after 0.5 seconds
         Structure.shouldExplode = false;
+    }
+
+    public void SetItemPurchased(bool purchased)
+    {
+        itemPurchased = purchased;
+    }
+
+    public bool IsItemPurchased()
+    {
+        return itemPurchased;
     }
 }
