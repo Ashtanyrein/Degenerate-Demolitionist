@@ -7,6 +7,7 @@ public class StructureDetector : MonoBehaviour
     public GameObject PedestrianLossTextObject;
     public GameObject FailureLossTextObject;
     public StructureManager Structure;
+    public int damage;
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
 
