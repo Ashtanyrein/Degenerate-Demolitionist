@@ -3,6 +3,7 @@ using UnityEngine;
 public class StructureDetector : MonoBehaviour
 {
     public GameObject WinTextObject;
+    public GameObject WinPanel;
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
 
@@ -28,7 +29,11 @@ public class StructureDetector : MonoBehaviour
             Debug.Log("Congratulations! You have destroyed all structures.");
 
             // Set the WinTextObject to active
-            WinTextObject.SetActive(true);
+            // WinTextObject.SetActive(true);
+
+            // Set the WinPanel to active
+            WinPanel.SetActive(true);
+
 
             // Perform any desired actions when the user wins
             // For example, you can show a victory screen, update score, etc.

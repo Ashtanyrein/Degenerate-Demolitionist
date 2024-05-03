@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int budget = 20;
     public GameObject BudgetCounter;
     public StructureManager Structure;
+    public bool itemPurchased = false;
 
     private TMPro.TextMeshProUGUI budgetCounterNumber;
 
@@ -34,5 +35,15 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         // Reset shouldExplode to false after 0.5 seconds
         Structure.shouldExplode = false;
+    }
+
+    public void SetItemPurchased(bool purchased)
+    {
+        itemPurchased = purchased;
+    }
+
+    public bool IsItemPurchased()
+    {
+        return itemPurchased;
     }
 }
