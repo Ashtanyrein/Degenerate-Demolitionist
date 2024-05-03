@@ -85,6 +85,7 @@ public class ShopItemDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 // Perform the purchase logic here
                 Debug.Log("Item purchased: " + PurchaseItem.name + " for $" + PurchaseItemPrice);
                 gameManager.budget -= PurchaseItemPrice;
+                gameManager.SetItemPurchased(true); // Set the item purchased to true
                 currentDraggedItem.transform.SetParent(BombParentObject, false);
             }
             else

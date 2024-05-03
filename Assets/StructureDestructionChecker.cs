@@ -42,7 +42,11 @@ public class StructureDetector : MonoBehaviour
             Debug.Log("Congratulations! You have destroyed all structures.");
 
             // Set the WinTextObject to active
-            WinTextObject.SetActive(true);
+            // WinTextObject.SetActive(true);
+
+            // Set the WinPanel to active
+            WinPanel.SetActive(true);
+
 
             // Perform any desired actions when the user wins
             // For example, you can show a victory screen, update score, etc.
