@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public int budget = 20;
     public GameObject BudgetCounter;
     public StructureManager Structure;
-
+    public bool itemPurchased = false;
+    public bool showShop = true;
     private TMPro.TextMeshProUGUI budgetCounterNumber;
-
-    public void TriggerExplosives()
+    public GameObject bombButton;
+    public GameObject shop;
+    
+    public void RestartScene()
     {
-        Structure.shouldExplode = !Structure.shouldExplode;
+        // Reload the current scene
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
     void Start()
     {
@@ -23,6 +29,31 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        budgetCounterNumber.text = budget.ToString();    
+        budgetCounterNumber.text = budget.ToString();
+    }
+
+    public void TriggerExplosives()
+    {
+        //Structure.shouldExplode = !Structure.shouldExplode;
+        StartCoroutine(Explosion());
+    }
+
+    private IEnumerator Explosion()
+    {
+        // Wait for 0.5 seconds
+        Structure.shouldExplode = true;
+        yield return new WaitForSeconds(0.5f);
+        bombButton.SetActive(false);
+        shop.SetActive(false);
+    }
+
+    public void SetItemPurchased(bool purchased)
+    {
+        itemPurchased = purchased;
+    }
+
+    public bool IsItemPurchased()
+    {
+        return itemPurchased;
     }
 }

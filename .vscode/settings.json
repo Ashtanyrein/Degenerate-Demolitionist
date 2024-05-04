@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Degenerate-Demolitionist.sln"
+    "dotnet.defaultSolution": "Game3-TheSmurfs.sln"
 }
