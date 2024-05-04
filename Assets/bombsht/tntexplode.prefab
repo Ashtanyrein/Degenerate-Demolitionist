@@ -55,12 +55,12 @@ MonoBehaviour:
   StampPaint: 0
   StampShape: {fileID: 2800000, guid: d01876177139274408b6fb053b6622a4, type: 3}
   StampColor: {r: 1, g: 1, b: 1, a: 1}
-  StampSize: {x: 1.5, y: 1.5}
+  StampSize: {x: 3.5, y: 3.5}
   StampRandomDirection: 1
   Raycast: 1
-  RaycastRadius: 3
-  RaycastCount: 2
-  ForcePerRay: 812.84
+  RaycastRadius: 2
+  RaycastCount: 10
+  ForcePerRay: 3000
   DamagePerRay: 1
 --- !u!82 &8237358
 AudioSource:

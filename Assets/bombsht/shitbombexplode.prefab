@@ -58,9 +58,9 @@ MonoBehaviour:
   StampSize: {x: 1.5, y: 1.5}
   StampRandomDirection: 1
   Raycast: 1
-  RaycastRadius: 1
-  RaycastCount: 5
-  ForcePerRay: 412.84
+  RaycastRadius: 0.5
+  RaycastCount: 4
+  ForcePerRay: 212.84
   DamagePerRay: 1
 --- !u!82 &8237358
 AudioSource:

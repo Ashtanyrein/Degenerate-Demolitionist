@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,13 @@ public class GameManager : MonoBehaviour
     private TMPro.TextMeshProUGUI budgetCounterNumber;
     public GameObject bombButton;
     public GameObject shop;
-
+    
+    public void RestartScene()
+    {
+        // Reload the current scene
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
     void Start()
     {
         budgetCounterNumber = BudgetCounter.GetComponent<TMPro.TextMeshProUGUI>();

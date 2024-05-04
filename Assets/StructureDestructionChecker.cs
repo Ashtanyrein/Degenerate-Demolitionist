@@ -6,6 +6,7 @@ public class StructureDetector : MonoBehaviour
     public GameObject WinTextObject;
     public GameObject PedestrianLossTextObject;
     public GameObject FailureLossTextObject;
+    public GameObject RestartButton;
     public StructureManager Structure;
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
@@ -64,15 +65,15 @@ public class StructureDetector : MonoBehaviour
             Debug.Log("Structures remaining. Keep destroying!");
 
             FailureLossTextObject.SetActive(true);
+            RestartButton.SetActive(true);
         }
-
-        //else if (Pedestrian stuff)
 
         else
         {
             if (pedestrianHits > 3)//if more than 3 pedestrian hits have occured then no win
             {
                 PedestrianLossTextObject.SetActive(true);
+                RestartButton.SetActive(true);
             }
             // No structures inside the area
             // The user has won the game
