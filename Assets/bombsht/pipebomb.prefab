@@ -156,6 +156,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   Explosion: {fileID: 100004, guid: b46890100828db6429ff69c322b45893, type: 3}
-  price: 5
+  price: 1
   Camera: {fileID: 0}
   ExplosionEffect: {fileID: 100000, guid: 8284f9467a0a64b45bb61d9d229f08c0, type: 3}

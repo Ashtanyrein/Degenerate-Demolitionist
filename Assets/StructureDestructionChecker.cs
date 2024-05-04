@@ -9,7 +9,11 @@ public class StructureDetector : MonoBehaviour
     public StructureManager Structure;
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
-
+    public int pedestrianHits = 0;
+    public void incrementPedoHits()
+    {
+        pedestrianHits += 1;
+    }
     private void Start()
     {
         // Set the WinTextObject to inactive at the start
@@ -24,30 +28,6 @@ public class StructureDetector : MonoBehaviour
         {
             StartCoroutine(DetermineWinLoss());
         }
-        /*
-        // Check if there are any structures inside the detection area
-        if (IsStructureInside())
-        {
-            // Structures still exist inside the area
-            // The user hasn't won yet
-            Debug.Log("Structures remaining. Keep destroying!");
-        }
-        else
-        {
-            // No structures inside the area
-            // The user has won the game
-            Debug.Log("Congratulations! You have destroyed all structures.");
-
-            // Set the WinTextObject to active
-            // WinTextObject.SetActive(true);
-
-            // Set the WinPanel to active
-            WinPanel.SetActive(true);
-
-
-            // Perform any desired actions when the user wins
-            // For example, you can show a victory screen, update score, etc.
-        }*/
     }
 
     private bool IsStructureInside()
@@ -90,7 +70,7 @@ public class StructureDetector : MonoBehaviour
 
         else
         {
-            if (false)//place condition for excessive pedestrian damage here
+            if (pedestrianHits > 3)//if more than 3 pedestrian hits have occured then no win
             {
                 PedestrianLossTextObject.SetActive(true);
             }
@@ -102,9 +82,6 @@ public class StructureDetector : MonoBehaviour
             {
                 WinTextObject.SetActive(true);
             }
-
-            // Perform any desired actions when the user wins
-            // For example, you can show a victory screen, update score, etc.
         }
     }
 }

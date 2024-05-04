@@ -4874,10 +4874,10 @@ MonoBehaviour:
   StampSize: {x: 1, y: 1}
   StampRandomDirection: 1
   Raycast: 1
-  RaycastRadius: 2
-  RaycastCount: 5
-  ForcePerRay: 5
-  DamagePerRay: 1
+  RaycastRadius: 0
+  RaycastCount: 0
+  ForcePerRay: 0
+  DamagePerRay: 0
 --- !u!82 &8237358
 AudioSource:
   m_ObjectHideFlags: 0

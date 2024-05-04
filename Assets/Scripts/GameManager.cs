@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public GameObject BudgetCounter;
     public StructureManager Structure;
     public bool itemPurchased = false;
-
+    public bool showShop = true;
     private TMPro.TextMeshProUGUI budgetCounterNumber;
+    public GameObject bombButton;
+    public GameObject shop;
 
     void Start()
     {
@@ -25,16 +27,17 @@ public class GameManager : MonoBehaviour
 
     public void TriggerExplosives()
     {
-        Structure.shouldExplode = !Structure.shouldExplode;
-        //StartCoroutine(ResetExplosion()); shouldn't run every time, but the function should exist for multiple scenes
+        //Structure.shouldExplode = !Structure.shouldExplode;
+        StartCoroutine(Explosion());
     }
 
-    private IEnumerator ResetExplosion()
+    private IEnumerator Explosion()
     {
         // Wait for 0.5 seconds
+        Structure.shouldExplode = true;
         yield return new WaitForSeconds(0.5f);
-        // Reset shouldExplode to false after 0.5 seconds
-        Structure.shouldExplode = false;
+        bombButton.SetActive(false);
+        shop.SetActive(false);
     }
 
     public void SetItemPurchased(bool purchased)
