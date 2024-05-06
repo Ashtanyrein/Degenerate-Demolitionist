@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ash Scene.unity
     guid: f9b0e65a6cff4244988cbd2abe5d0fe7
   - enabled: 1
-    path: Assets/Scenes/level2.unity
+    path: Assets/Scenes/level3.unity
     guid: e5340659966de054a895c484a962abbd
   - enabled: 1
     path: Assets/Scenes/level4.unity
