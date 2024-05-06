@@ -14,6 +14,8 @@ public class StructureDetector : MonoBehaviour
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
     public int pedestrianHits = 0;
+    public sceneCompletionToggler sceneCompManager;
+
     public void incrementPedoHits()
     {
         pedestrianHits += 1;
@@ -58,10 +60,10 @@ public class StructureDetector : MonoBehaviour
     }
     private IEnumerator DetermineWinLoss()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(4.0f);
 
         // Check if there are any structures inside the detection area
-        if (IsStructureInside() && (pedestrianHits <= 3))
+        if (IsStructureInside() && (pedestrianHits <= 5))
         {
             // Structures still exist inside the area
             // The user hasn't won yet
@@ -88,6 +90,7 @@ public class StructureDetector : MonoBehaviour
             {
                 //WinTextObject.SetActive(true);
                 WinPanel.SetActive(true);
+               sceneCompManager.SceneDone();
             }
         }
     }
