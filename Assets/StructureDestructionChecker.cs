@@ -4,6 +4,9 @@ using System.Collections;
 public class StructureDetector : MonoBehaviour
 {
     public GameObject WinTextObject;
+    public GameObject WinPanel;
+    public GameObject LossPanel;
+    public GameObject PedLossPanel;
     public GameObject PedestrianLossTextObject;
     public GameObject FailureLossTextObject;
     public GameObject RestartButton;
@@ -58,30 +61,33 @@ public class StructureDetector : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
         // Check if there are any structures inside the detection area
-        if (IsStructureInside())
+        if (IsStructureInside() && (pedestrianHits <= 3))
         {
             // Structures still exist inside the area
             // The user hasn't won yet
             Debug.Log("Structures remaining. Keep destroying!");
 
-            FailureLossTextObject.SetActive(true);
-            RestartButton.SetActive(true);
+            //FailureLossTextObject.SetActive(true);
+            //RestartButton.SetActive(true);
+            LossPanel.SetActive(true);
         }
 
         else
         {
-            if (pedestrianHits > 3)//if more than 3 pedestrian hits have occured then no win
+            if ((pedestrianHits > 3))//if more than 3 pedestrian hits have occured then no win
             {
-                PedestrianLossTextObject.SetActive(true);
-                RestartButton.SetActive(true);
+                //PedestrianLossTextObject.SetActive(true);
+                //RestartButton.SetActive(true);
+                PedLossPanel.SetActive(true);
             }
             // No structures inside the area
             // The user has won the game
 
             // Set the WinTextObject to active
-            else
+            else if (!IsStructureInside() && (pedestrianHits <= 3))
             {
-                WinTextObject.SetActive(true);
+                //WinTextObject.SetActive(true);
+                WinPanel.SetActive(true);
             }
         }
     }
