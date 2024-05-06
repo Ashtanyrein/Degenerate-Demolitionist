@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Slider volumeSlider;
     
-    public void SetVolume (float volume)
+    public void SetVolume()
     {
-        audioMixer.SetFloat("volume", volume);
+        float volume = volumeSlider.value;
+        audioMixer.SetFloat("music", Mathf.Log10(volume) * 20);
     }
 }
