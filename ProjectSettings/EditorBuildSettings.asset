@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 4d1381d30feb86c488d71fc19568835f
-  - enabled: 0
-    path: Assets/Scenes/Ash Scene.unity
-    guid: f9b0e65a6cff4244988cbd2abe5d0fe7
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 4cc9fa4f420f8ab428da77c2efc6c570
   - enabled: 1
-    path: Assets/Scenes/level1.unity
-    guid: 39849fc5e4999ee4fa287b67cad12cfa
+    path: Assets/Scenes/Ash Scene.unity
+    guid: f9b0e65a6cff4244988cbd2abe5d0fe7
+  - enabled: 1
+    path: Assets/Scenes/level2.unity
+    guid: e5340659966de054a895c484a962abbd
   m_configObjects: {}
