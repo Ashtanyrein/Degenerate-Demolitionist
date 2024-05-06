@@ -14,6 +14,8 @@ public class StructureDetector : MonoBehaviour
     public Vector2 DetectionAreaSize = new Vector2(10f, 10f);
     public LayerMask StructureLayer;
     public int pedestrianHits = 0;
+    public sceneCompletionToggler sceneCompManager;
+
     public void incrementPedoHits()
     {
         pedestrianHits += 1;
@@ -88,6 +90,7 @@ public class StructureDetector : MonoBehaviour
             {
                 //WinTextObject.SetActive(true);
                 WinPanel.SetActive(true);
+               sceneCompManager.SceneDone();
             }
         }
     }
